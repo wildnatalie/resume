@@ -1,0 +1,208 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    color: #333;
+}
+
+a {
+    color: crimson;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h1 {
+    font-family: 'Poiret One', cursive;
+    float: left;
+    font-size: 4rem;
+    padding: 2rem 0.5rem 0.5rem 0.5rem;
+}
+
+header {
+    grid-area: header;
+    min-height: 10.2rem;
+    border-bottom: 1px solid #333;
+}
+
+header img {
+    float: right;
+    height: 10rem;
+}
+
+.standOut {
+    color: crimson;
+    font-weight: bold;
+}
+
+#profile {
+    grid-area: profile;
+    padding: 10px;
+    border-bottom: 1px solid #333;
+}
+
+#info {
+    grid-area: info;
+    padding: 10px;
+    border-bottom: 1px solid #333;
+}
+
+i {
+    color: #333;
+}
+
+#skills {
+    grid-area: skills;
+    padding: 10px;
+    border-bottom: 1px solid #333;
+}
+
+#education {
+    grid-area: education;
+    padding: 10px;
+    border-bottom: 1px solid #333;
+}
+
+#education td {
+    padding-bottom: 1rem;
+}
+
+#technical {
+    grid-area: technical;
+    padding: 10px;
+    border-bottom: 1px solid #333;
+}
+
+#technical ul {
+    list-style: none;
+    padding: 0;
+}
+
+#technical li {
+    padding-bottom: 0.7rem;
+}
+
+progress[value] {
+    width: 100%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-progress-appearance: none;
+    border: none;
+    color: crimson;
+}
+
+progress[value]::-webkit-progress-bar {
+  background-color: #eee;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+}
+
+progress[value]::-webkit-progress-value {
+    background-image:
+        -webkit-linear-gradient(left, #fbd0d7, crimson),
+        -webkit-linear-gradient(top, rgba(255, 255, 255, .25), rgba(0, 0, 0, .25));
+    border-radius: 2px; 
+}
+
+progress[value]::-moz-progress-bar {
+    background-image:
+        -moz-linear-gradient(left, #fbd0d7, crimson),
+        -moz-linear-gradient(top, rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.25));
+    border-radius: 2px;
+}
+
+#achievements {
+    grid-area: achievements;
+    padding: 10px;
+    border-bottom: 1px solid #333;
+}
+
+#workExperience {
+    grid-area: workExperience;
+    padding: 10px;
+    border-bottom: 1px solid #333;
+}
+
+footer {
+    grid-area: footer;
+    padding: 10px;
+}
+
+#wrapper {
+    display: grid;
+    border-right: 1rem solid crimson;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "header"
+        "info"
+        "profile"
+        "workExperience"
+        "education"
+        "skills"
+        "technical"
+        "footer";
+}
+
+/* MEDIA QUERIES */
+
+@media (min-width: 576px) { 
+    #wrapper {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "header header"
+            "profile info"
+            "workExperience workExperience"
+            "education skills"
+            "technical technical"
+            "footer footer";
+    }
+
+    #profile {
+        border-right: 1px solid #333;
+    }
+
+    #education {
+        border-right: 1px solid #333;
+    }
+
+    #skills {
+        border-right: 1px solid #333;
+    }
+}
+
+@media (min-width: 992px) {
+    #wrapper {
+        width: 992px;
+        margin: 0 auto;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas:
+            "header header header"
+            "profile profile info"
+            "skills workExperience workExperience"
+            "education workExperience workExperience"
+            "technical workExperience workExperience"
+            "footer footer footer";
+    }
+
+    #technical {
+        border-right: 1px solid #333;
+    }
+
+    #achievements {
+        border-right: 1px solid #333;
+    }
+
+    h1 {
+        letter-spacing: 0.5rem;
+    }
+
+    header {
+        height: 10.2rem;
+    }
+}
